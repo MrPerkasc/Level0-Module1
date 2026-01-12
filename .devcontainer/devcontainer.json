@@ -2,15 +2,16 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
 	"name": "Java",
-	"image": "ghcr.io/league-infrastructure/jtljava:latest",
+	"image": "mcr.microsoft.com/devcontainers/java:21-bookworm",
+
+        "containerEnv": {
+           "SDL_VIDEO_WINDOW_POS": "0,0", // GUI Windows all the way in the upper left.
+           "SDL_AUDIODRIVER": "dummy" // Disable audio
+        },
+
 
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "none",
-			"installMaven": "false",
-			"installGradle": "false"
-		},
-		"ghcr.io/devcontainers/features/desktop-lite:1": {
+		"ghcr.io/devcontainers/features/desktop-lite:1.2.7": {
 			"password" : "code4life"
 		}
 	},
